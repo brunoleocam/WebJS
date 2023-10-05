@@ -4,6 +4,22 @@
 // informar apenas a seguinte informação (note que não foram exibidas informações sobre as demais cédulas): 1
 // nota(s) de R$ 10. 1 nota(s) de R$ 5. 3 nota(s) de R$ 1.
 
-function cedulas(valor) {
-    
+function menorQuantidadeCedulas(valor) {
+    let notas = [100, 50, 10, 5, 1];
+    const cedulas = [];
+    let resto = valor;
+
+    console.log(`Menor quantidade de cedulas para R$ ${valor}`);
+
+    for (valor in notas){
+        cedulas.push(Math.floor(resto / notas[valor]));
+        resto = resto % notas[valor];  
+        if (cedulas[valor] > 0){
+            console.log(`    ${cedulas[valor]} nota(s) de R$ ${notas[valor]}`);
+        }
+    }
 }
+
+menorQuantidadeCedulas(18);
+menorQuantidadeCedulas(153);
+menorQuantidadeCedulas(100);
