@@ -27,5 +27,19 @@ const carro = {
     }, {
         nome: 'Ana',
         idade: 42
-    }]
+    }],
+    calcularValorSeguro: function() {
+        // ...
+    }
 }
+
+carro.proprietario.endereco.numero = 1000;
+carro['proprietario']['endereco']['logradouro'] = 'Av Gigante';
+console.log(carro);
+
+delete carro.condutores;
+delete carro.proprietario.endereco;
+delete carro.calcularValorSeguro;
+console.log(carro);
+console.log(carro.condutores); // undefined
+console.log(carro.condutores.length); // Erro!
